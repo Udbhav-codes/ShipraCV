@@ -1,0 +1,146 @@
+.article {
+  padding-block: var(--space-7) var(--space-10);
+}
+
+.article__header {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 52rem;
+  margin-block: var(--space-8) var(--space-8);
+}
+
+.article__header > .label:first-child {
+  color: var(--color-accent);
+}
+
+.article__title {
+  font-size: var(--fs-hero);
+  line-height: 1;
+}
+
+.article__intro {
+  max-width: 40rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem);
+  line-height: 1.35;
+}
+
+.article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.article__body {
+  max-width: 40rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  line-height: 1.6;
+}
+
+.article__body > * + * {
+  margin-top: 1.2em;
+}
+
+.article__body > p:first-child::first-letter {
+  float: left;
+  padding: 0.08em 0.1em 0 0;
+  font-size: 4.4em;
+  line-height: 0.8;
+  color: var(--color-accent);
+}
+
+.article__body h2 {
+  margin-top: 2em;
+  font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+}
+
+.article__body blockquote {
+  padding-left: var(--space-5);
+  border-left: 2px solid var(--color-accent);
+  font-size: 1.2em;
+}
+
+.article__footer {
+  max-width: 40rem;
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 64rem) {
+  .article__header,
+  .article__body,
+  .article__footer {
+    margin-left: calc((100% - var(--gutter) * 2) / 12 * 1);
+  }
+}
+
+/* ---------- Sample-draft notice ---------- */
+
+.article__draft {
+  max-width: 40rem;
+  padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--color-sun);
+  background: var(--color-white);
+  font-size: var(--fs-small);
+  color: var(--color-text-soft);
+}
+
+.article__draft strong {
+  color: var(--color-ink);
+}
+
+/* ---------- Framed panels: emails, notices, side-by-side versions ---------- */
+
+.card {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+
+.card__label {
+  color: var(--color-accent);
+}
+
+.card__page {
+  display: grid;
+  gap: var(--space-4);
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  background: var(--color-white);
+  border: 1px solid var(--color-ink);
+  box-shadow: 0.5rem 0.5rem 0 var(--color-soft);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+}
+
+.card__page > p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.card__heading {
+  font-size: clamp(1.4rem, 1.15rem + 1vw, 1.9rem);
+  line-height: 1.15;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card__signoff {
+  display: grid;
+}
+
+.card__note {
+  font-family: var(--font-body);
+  line-height: 1.55;
+  font-size: var(--fs-small);
+  color: var(--color-text-soft);
+}
+
+.card__note .label {
+  margin-right: var(--space-2);
+  color: var(--color-ink);
+}

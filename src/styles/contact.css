@@ -1,0 +1,111 @@
+.contact {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding-block: var(--space-10);
+  scroll-margin-top: var(--header-offset);
+}
+
+.contact__inner {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.contact__head {
+  display: grid;
+  gap: var(--space-5);
+  justify-items: start;
+  max-width: 52rem;
+}
+
+.contact__head .label {
+  color: var(--color-soft);
+}
+
+.contact__title {
+  font-size: clamp(2.2rem, 1.4rem + 3.4vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.contact__title em {
+  color: var(--color-soft);
+}
+
+.contact__invite {
+  max-width: 33rem;
+  color: rgb(243 241 234 / 0.82);
+}
+
+.button--light {
+  margin-top: var(--space-2);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
+}
+
+.button--light:hover {
+  background: var(--color-soft);
+  border-color: var(--color-soft);
+}
+
+.contact__details {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgb(243 241 234 / 0.25);
+  max-width: 52rem;
+}
+
+.contact__details > div {
+  display: grid;
+  gap: var(--space-1);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid rgb(243 241 234 / 0.25);
+}
+
+.contact__details .label {
+  color: var(--color-soft);
+}
+
+.contact__details dd {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1rem + 0.9vw, 1.625rem);
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.contact__details a {
+  display: inline-block;
+  min-height: 2.75rem;
+  padding-block: 0.4rem;
+  text-decoration: underline;
+  text-decoration-color: var(--color-sun);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  transition: text-decoration-color var(--t-med) var(--ease), color var(--t-med) var(--ease);
+}
+
+.contact__details a:hover {
+  color: var(--color-soft);
+  text-decoration-color: var(--color-soft);
+}
+
+.contact :focus-visible {
+  outline-color: var(--color-soft);
+}
+
+@media (min-width: 52rem) {
+  .contact__inner {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-5);
+    align-items: end;
+  }
+
+  .contact__head {
+    grid-column: 1 / span 6;
+  }
+
+  .contact__details {
+    grid-column: 7 / span 6;
+  }
+}

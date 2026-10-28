@@ -1,0 +1,134 @@
+.background__grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.education {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-ink);
+}
+
+.education > .label:first-child {
+  color: var(--color-accent);
+}
+
+.education__institution {
+  margin-top: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.education__university {
+  color: var(--color-text-soft);
+}
+
+.education__details {
+  display: grid;
+  gap: 0;
+  margin-top: var(--space-5);
+}
+
+.education__details > div {
+  display: grid;
+  gap: var(--space-1);
+  padding-block: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.education__additional {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.education__additional li {
+  display: grid;
+  padding-block: var(--space-2);
+}
+
+.skills {
+  display: grid;
+  align-content: start;
+}
+
+.skills__heading {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-ink);
+  color: var(--color-accent);
+}
+
+.skill-group {
+  display: grid;
+  gap: var(--space-3);
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skill-group__title {
+  font-size: clamp(1.5rem, 1.25rem + 0.8vw, 1.875rem);
+}
+
+.skill-group__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) 0;
+}
+
+.skill-group__list li {
+  font-size: var(--fs-small);
+}
+
+.skill-group__list li:not(:last-child)::after {
+  content: "/";
+  margin-inline: 0.7em;
+  color: var(--color-accent);
+}
+
+.skills__habits {
+  display: grid;
+  gap: var(--space-1);
+  padding-top: var(--space-5);
+  font-size: var(--fs-small);
+  color: var(--color-text-soft);
+}
+
+.interests {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-9);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.interests ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  line-height: 1.2;
+}
+
+.interests li:nth-child(even) {
+  color: var(--color-accent);
+}
+
+@media (min-width: 52rem) {
+  .background__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-5);
+  }
+
+  .education {
+    grid-column: 1 / span 5;
+  }
+
+  .skills {
+    grid-column: 7 / span 6;
+  }
+}

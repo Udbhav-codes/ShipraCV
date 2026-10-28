@@ -1,0 +1,91 @@
+.approach {
+  background: var(--color-white);
+  border-block: 1px solid var(--color-border);
+}
+
+.approach__head {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 62rem;
+}
+
+.approach__head .label {
+  color: var(--color-accent);
+}
+
+.approach__statement {
+  font-size: var(--fs-statement);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.approach__note {
+  max-width: 24rem;
+  margin-top: var(--space-6);
+}
+
+.approach__list {
+  display: grid;
+  gap: 0;
+  margin-top: var(--space-8);
+  border-top: 1px solid var(--color-ink);
+}
+
+.principle {
+  display: grid;
+  gap: var(--space-3);
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.principle__number {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.principle__title {
+  font-size: var(--fs-h3);
+}
+
+.principle__copy {
+  max-width: 28rem;
+  color: var(--color-text-soft);
+}
+
+@media (min-width: 52rem) {
+  .principle {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-5);
+    align-items: baseline;
+    padding-block: var(--space-7);
+  }
+
+  .principle__number {
+    grid-column: 1 / span 1;
+  }
+
+  .principle__title {
+    grid-column: 2 / span 5;
+    font-size: clamp(2rem, 1.4rem + 1.6vw, 2.75rem);
+  }
+
+  .principle__copy {
+    grid-column: 8 / span 4;
+  }
+
+  /* Deliberate stagger: the second principle steps in from the left. */
+  .principle--2 .principle__number {
+    grid-column: 2 / span 1;
+  }
+
+  .principle--2 .principle__title {
+    grid-column: 3 / span 5;
+  }
+
+  .principle--2 .principle__copy {
+    grid-column: 9 / span 4;
+  }
+}
